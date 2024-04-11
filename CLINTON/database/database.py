@@ -25,8 +25,8 @@ class Database:
     async def delete_user(self, uid):
         await self.warrior.delete_many({'uid': int(uid)})
 
-    async def user_exist(self, id):
-        user = await self.warrior.find_one({'uid': int(id)})
+    async def user_exist(self, uid):
+        user = await self.warrior.find_one({'uid': int(uid)})
         return True if user else False
 
     async def get_thumbnail(self, uid):
