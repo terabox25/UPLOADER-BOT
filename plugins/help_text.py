@@ -29,12 +29,13 @@ async def help_user(bot, update):
     
     # Make sure update.message exists and has the necessary attributes
     await bot.send_message(
-        chat_id=update.chat.id if hasattr(update, "chat") else update.message.chat.id,
-        text=Translation.HELP_USER,
-        parse_mode="markdown",  # Ensure the text is markdown compatible
-        disable_web_page_preview=True,
-        reply_to_message_id=update.id if hasattr(update, "id") else update.message.id
-    )
+    chat_id=update.chat.id,
+    text=Translation.HELP_USER,
+    parse_mode="MarkdownV2",  # Use "MarkdownV2" for newer markdown formatting
+    disable_web_page_preview=True,
+    reply_to_message_id=update.id
+)
+
 
 
 
