@@ -21,7 +21,7 @@ from helper_funcs.display_progress import progress_for_pyrogram, humanbytes, Tim
 @Clinton.on_message(filters.private & ~filters.via_bot & filters.regex(pattern=".*http.*"))
 async def echo(bot, update):
     await AddUser(bot, update)
-    imog = await update.reply_text("Processing...⚡", reply_to_message_id=update.message_id)
+    imog = await update.reply_text("Processing...⚡", reply_to_message_id=update.id)
     youtube_dl_username = None
     youtube_dl_password = None
     file_name = None
@@ -100,7 +100,7 @@ async def echo(bot, update):
         await bot.send_message(chat_id=update.chat.id,
         text=Translation.NO_VOID_FORMAT_FOUND.format(str(error_message)),
         disable_web_page_preview=True, parse_mode="html",
-        reply_to_message_id=update.message_id)
+        reply_to_message_id=update.id)
         await imog.delete(True)
         return False
     if t_response:
@@ -222,7 +222,7 @@ async def echo(bot, update):
             text=Translation.FORMAT_SELECTION + "\n" + Translation.SET_CUSTOM_USERNAME_PASSWORD,
             reply_markup=reply_markup,
             parse_mode="html",
-            reply_to_message_id=update.message_id
+            reply_to_message_id=update.id
         )
     else:
         inline_keyboard = []
@@ -247,4 +247,4 @@ async def echo(bot, update):
         text=Translation.FORMAT_SELECTION,
         reply_markup=reply_markup,
         parse_mode="html",
-        reply_to_message_id=update.message_id)
+        reply_to_message_id=update.id)
