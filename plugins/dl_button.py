@@ -204,7 +204,7 @@ async def ddl_call_back(bot, update):
             await bot.edit_message_text(
                 text=Translation.AFTER_SUCCESSFUL_UPLOAD_MSG_WITH_TS.format(time_taken_for_download, time_taken_for_upload),
                 chat_id=update.message.chat.id,
-                message_id=update.message.id,
+                message_id=update.message.message_id,
                 disable_web_page_preview=True
             )
     else:
