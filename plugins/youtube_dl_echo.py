@@ -221,7 +221,6 @@ async def echo(bot, update):
             chat_id=update.chat.id,
             text=Translation.FORMAT_SELECTION + "\n" + Translation.SET_CUSTOM_USERNAME_PASSWORD,
             reply_markup=reply_markup,
-            parse_mode="html",
             reply_to_message_id=update.id
         )
     else:
@@ -246,5 +245,4 @@ async def echo(bot, update):
         chat_id=update.chat.id,
         text=Translation.FORMAT_SELECTION,
         reply_markup=reply_markup,
-        parse_mode="html",
         reply_to_message_id=update.id)
