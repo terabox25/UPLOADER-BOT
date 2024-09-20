@@ -53,5 +53,5 @@ async def start(bot, update):
                 [InlineKeyboardButton("Developer 👨‍⚖️", url="https://t.me/clinton_abraham")],
             ]
         ),
-        reply_to_message_id=update.message_id
+        reply_to_message_id=update.id
     )
